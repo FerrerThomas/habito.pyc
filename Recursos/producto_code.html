@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Habito - Product Details</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec9213",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221a10",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for modal content if it overflows */
+        .modal-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .modal-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .modal-scroll::-webkit-scrollbar-thumb {
+            background-color: #e5e7eb;
+            border-radius: 20px;
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+        .scale-up {
+            animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes scaleUp {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#1b160d] antialiased overflow-hidden h-screen w-screen relative">
+<!-- Background Content (Simulating the underlying screen behind the modal) -->
+<div class="absolute inset-0 z-0 flex flex-col p-4 opacity-30 pointer-events-none filter blur-[2px]">
+<div class="flex items-center justify-between pb-6">
+<div class="w-10 h-10 bg-gray-200 rounded-full"></div>
+<div class="h-6 w-32 bg-gray-200 rounded"></div>
+<div class="w-10 h-10 bg-gray-200 rounded-full"></div>
+</div>
+<div class="h-48 w-full bg-gray-200 rounded-xl mb-6"></div>
+<div class="grid grid-cols-2 gap-4">
+<div class="h-40 bg-gray-200 rounded-xl"></div>
+<div class="h-40 bg-gray-200 rounded-xl"></div>
+<div class="h-40 bg-gray-200 rounded-xl"></div>
+<div class="h-40 bg-gray-200 rounded-xl"></div>
+</div>
+</div>
+<!-- Modal Overlay -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm fade-in" role="dialog">
+<!-- Modal Card -->
+<div class="relative w-full max-w-[360px] max-h-[90vh] flex flex-col bg-white dark:bg-[#1e1e1e] rounded-2xl shadow-2xl scale-up overflow-hidden ring-1 ring-black/5">
+<!-- Close Button (Absolute) -->
+<button aria-label="Close modal" class="absolute top-3 right-3 z-10 p-2 rounded-full bg-white/80 dark:bg-black/50 hover:bg-white dark:hover:bg-black/70 text-gray-800 dark:text-white transition-colors backdrop-blur-md shadow-sm">
+<span class="material-symbols-outlined text-[20px] font-bold">close</span>
+</button>
+<!-- Scrollable Content Area -->
+<div class="flex-1 overflow-y-auto modal-scroll">
+<!-- Main Hero Image -->
+<div class="relative w-full aspect-[4/3] bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center" data-alt="Close up of caramel macchiato with latte art and drizzle" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYZpVlFPaw7__Nzbep1AMgLwiNI-1WtL336fg-DRnH3AcYzO65_UURqD4m240e9HTRam5Zkdke9Gb8isM8NnI18utWia_MYzPvq9i7NZlLKgGpVhxhx5bjnjoMeNUymQqdL_22T4orPx45dJJBUPjNjulW6boEGfJm3pG0-ct-uufHXH32SnGJ8_LmBnN93bxSC94HuO8YNOioe-myHK_OjtA6rtU90-8EiVwvpjI1kW4XjTlrqS_q-JzW7t5IyH_Jn3KKMpmxog');">
+</div>
+</div>
+<!-- Thumbnail Gallery -->
+<div class="px-5 -mt-6 relative z-10">
+<div class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+<button class="shrink-0 w-16 h-16 rounded-lg border-2 border-primary overflow-hidden shadow-sm transition-transform active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary/50">
+<div class="w-full h-full bg-cover bg-center" data-alt="Overhead view of coffee cup on wooden table" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAbSC1SD5_UR2OLF4TU4rsl0CgV9DE-fdPW-w5Piw4PLxeOOss3htMD1kDhiq30051531MEBESoeB9S1aZOsa-iE50N55E9tB6-W_A42jF91Ff0Zb4jJarOjRcESRD2qLnM2zWdD2Ph3JFsrWiOU4Sv55d7DkY_1N8pjsjDF1Lr-RQf10yO6LIpnOQ3FpuXFGxux_CB1cOrsQT7ginUPMNYxdtqnED2gLQQ0BkNoWCo4_61WQ4t7IDafy1AoEpTUQlnrlWPDptnKQ');">
+</div>
+</button>
+<button class="shrink-0 w-16 h-16 rounded-lg border-2 border-transparent hover:border-gray-200 dark:hover:border-gray-700 overflow-hidden shadow-sm transition-transform active:scale-95">
+<div class="w-full h-full bg-cover bg-center opacity-80 hover:opacity-100" data-alt="Barista pouring milk into coffee cup" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAtVPYRh60ZPJTL8LnvQ_xaJm9a9UYhz7-rnXmnweuebnDMes2FFo1Z65I8Wmh2ujpImbyNVamCNsJmpXpFTHYUXcEA4ebQscfIgnblpTympXOcYyixfPIR-vbgKDuNYk79cHxXNE5bfh3Hdetv5V3w5o5yWRvBugbumlQghOgewNXfysYvvo2H5a9XJzofm11_7wB1nG6MhI7w-gN6JcFUQqeKtAXQZJK6I5tfHPOkpWiUocUZY19wzb0RZEsw0SM3L1k9AjQLXA');">
+</div>
+</button>
+<button class="shrink-0 w-16 h-16 rounded-lg border-2 border-transparent hover:border-gray-200 dark:hover:border-gray-700 overflow-hidden shadow-sm transition-transform active:scale-95">
+<div class="w-full h-full bg-cover bg-center opacity-80 hover:opacity-100" data-alt="Lifestyle shot of coffee cup next to a book" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtz2W8He3KEPpalPM6KiRp-aKZgVePcEjEhtYA_M9LdP2n1GJ6JYcPW6OguO-8fne5U9p7QJoi8qPZCE2EWG2Ifg3DUwngNePzQDhHl9RzYKEpLP8HQ9AQWk-Yw8ZP7JSL3u0hyCIA1RxNWvrJKDV0ma41xcRlwrOgxIBtBQo2Rm2u0f1iSLJ0QegzmXWdm15P2O9utxf76SNjt2lKuYnxmANFQMrwm1cTSAUo-wI3Xa4zZTJz-GyEJa41yQDz-WdMI3cosABYgA');">
+</div>
+</button>
+</div>
+</div>
+<!-- Content Body -->
+<div class="px-5 pt-2 pb-6">
+<!-- Title & Price -->
+<div class="flex flex-col gap-1 mb-4">
+<h2 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white" id="modal-title">Caramel Macchiato</h2>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400">Coffee • Hot Drinks</span>
+<div class="px-3 py-1 rounded-full bg-primary/10 dark:bg-primary/20 text-primary font-bold text-lg">
+                                $4.50
+                            </div>
+</div>
+</div>
+<!-- Description -->
+<div class="space-y-4">
+<p class="text-[15px] leading-relaxed text-gray-600 dark:text-gray-300">
+                            Freshly steamed milk with vanilla-flavored syrup marked with espresso and topped with a caramel drizzle for an oh-so-sweet finish. A classic favorite for any time of day.
+                        </p>
+<!-- Extra details (Ingredients/Allergens) -->
+<div class="pt-2 border-t border-gray-100 dark:border-gray-800">
+<h3 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Details</h3>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center px-2 py-1 rounded bg-gray-50 dark:bg-gray-800 text-xs font-medium text-gray-600 dark:text-gray-400 border border-gray-100 dark:border-gray-700">
+<span class="material-symbols-outlined text-[14px] mr-1">local_cafe</span> 250 kcal
+                                </span>
+<span class="inline-flex items-center px-2 py-1 rounded bg-gray-50 dark:bg-gray-800 text-xs font-medium text-gray-600 dark:text-gray-400 border border-gray-100 dark:border-gray-700">
+<span class="material-symbols-outlined text-[14px] mr-1">eco</span> Vegetarian
+                                </span>
+<span class="inline-flex items-center px-2 py-1 rounded bg-gray-50 dark:bg-gray-800 text-xs font-medium text-gray-600 dark:text-gray-400 border border-gray-100 dark:border-gray-700">
+                                    Contains Dairy
+                                </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="p-5 pt-3 bg-white dark:bg-[#1e1e1e] border-t border-gray-100 dark:border-gray-800 sticky bottom-0 z-20">
+<button class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-orange-600 active:bg-orange-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-orange-200 dark:shadow-none transition-all duration-200 transform active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                    Volver al menú
+                </button>
+</div>
+</div>
+</div>
+</body></html>

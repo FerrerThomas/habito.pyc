@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Habito – Café &amp; Panadería</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ec9213",
+              "background-light": "#f8f7f6",
+              "background-dark": "#221a10",
+              "text-main": "#1b160d",
+              "text-light": "#9a794c",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display antialiased overflow-x-hidden selection:bg-primary/30">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+<!-- Sticky Navigation Bar -->
+<nav class="sticky top-0 z-50 w-full bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-black/5 dark:border-white/10 transition-colors duration-300">
+<div class="flex items-center p-4 justify-between h-16 max-w-md mx-auto w-full">
+<!-- Hamburger Menu -->
+<button aria-label="Menu" class="flex size-10 shrink-0 items-center justify-center text-text-main dark:text-white hover:bg-black/5 dark:hover:bg-white/10 rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Logo -->
+<h2 class="text-text-main dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                    Habito
+                </h2>
+<!-- CTA Link -->
+<a class="flex items-center justify-end group" href="#menu">
+<p class="text-primary text-sm font-bold leading-normal tracking-[0.015em] shrink-0 group-hover:text-primary/80 transition-colors">
+                        Ver menú
+                    </p>
+</a>
+</div>
+<!-- Mobile Menu Links (Hidden by default, visual representation of structure) -->
+<!-- Note: In a real app, this would be toggled via JS. -->
+</nav>
+<!-- Main Content Wrapper -->
+<main class="flex flex-col w-full max-w-md mx-auto">
+<!-- Hero Section -->
+<section class="@container relative">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[520px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-end pb-12 p-4 relative overflow-hidden" data-alt="Cozy coffee shop interior with warm lighting and wooden furniture" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.1) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDYLqQFAZ9hBbbFnlrcZwlH5KgrfqjlHl3ebq7LN9JiP-3ZO2tfJczhfFiRccYXn1UV2qyTVqY8pAsU9SrmoR_Mph5iJBVnQALy1m-5k5wKK6Wtego3-tgbY7kCLbmsFdfhG8mOyTndLBMS4FaHCViH3VD7CtQqjwNSGz-9yX8RC4gK9Nlg1PfZs4n_JV8LE-8kCxdcWpNktsoAeVaFW3RV30GuuH_n8JFooSqf0oSBmIt44pu04CJsSpym2P7z5bMsKndEbqaRqg");'>
+<div class="flex flex-col gap-3 text-center z-10 max-w-[320px]">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] drop-shadow-sm">
+                                Habito – Café &amp; Panadería
+                            </h1>
+<h2 class="text-white/90 text-sm font-medium leading-relaxed">
+                                El arte del buen café y el pan recién horneado en un ambiente único.
+                            </h2>
+</div>
+<button class="z-10 flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary hover:bg-primary/90 transition-all text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20 transform active:scale-95">
+<span class="truncate">Ver menú</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Spacer -->
+<div class="h-8"></div>
+<!-- Section: El Lugar (The Place) -->
+<section id="place">
+<div class="flex items-center justify-between px-4 pb-2 pt-4">
+<h3 class="text-text-main dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Nuestro Espacio</h3>
+<a class="text-xs font-bold text-primary tracking-wide uppercase" href="#">Galería</a>
+</div>
+<p class="text-text-main/70 dark:text-white/70 text-base font-normal leading-relaxed pb-6 pt-1 px-4">
+                    Un rincón acogedor para tus mañanas, diseñado para disfrutar del aroma del café y la calidez del pan recién hecho.
+                </p>
+<!-- Image Grid -->
+<div class="grid grid-cols-2 gap-3 px-4">
+<!-- Image 1: Main feature -->
+<div class="col-span-2 aspect-[2/1] w-full overflow-hidden rounded-lg shadow-sm">
+<div class="w-full h-full bg-center bg-cover hover:scale-105 transition-transform duration-500" data-alt="Barista pouring latte art into a ceramic cup" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCCda3ZLarsdt9hOB7zmt1YphtmI7DNxNTBkwwzbFY2YdR-NCIa-T-5yze_Iq7pfCpzqe-cIz2Fos4w5PbQdJEGPAcF6JmslzoXngfa3gE-YOm6OhGZd9G-ArbrrbSeAn63y89c0aN6LbmymkaRuy_vUQxQkxA6ZURS-Hzas7L0e7z-j5edUKQKvAL4CQHCxv2K71mfcgfxmBK29fUGWTNpwbBmSwVJNnjgS5a4CVfY6LCtCraoaNUMghuYOiWDeNDkeAuATE05g");'>
+</div>
+</div>
+<!-- Image 2 -->
+<div class="aspect-square w-full overflow-hidden rounded-lg shadow-sm">
+<div class="w-full h-full bg-center bg-cover hover:scale-105 transition-transform duration-500" data-alt="Freshly baked croissants on a wooden tray" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5pOejPIpJKdLybE0aM3G6qZnxKNOoHVnDwMZTvj3PeyE2TCRf0ICdiVIr0LWLtz0Ab5oEgvuHn6GZC-n27806Pic5sFJ3s5K8h-cvPJtz04K6f25u-DT20cqPXU6qcIBDkLjB3kx1aFV-Ad21EGNJLc0hSC7wbYVNwg74atlQSRpZSZiofbu6c5nhI123DG3VQ9MZ1U4RaI-IqYKJ61MNRQrUq7NTfiE3qYYHlI-FQhKy_kzzEq6IKizkdHvqt1L7J1ouW6ptgg");'>
+</div>
+</div>
+<!-- Image 3 -->
+<div class="aspect-square w-full overflow-hidden rounded-lg shadow-sm">
+<div class="w-full h-full bg-center bg-cover hover:scale-105 transition-transform duration-500" data-alt="Modern cozy seating area with plants" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSQiPGEIgiper_NanqB9ZF3_VUMtfQNelMtrOpKFQJgkqc7d9t8pEytSdIPlCdGEPfeoWTOGoLdJEv9F_f1FB_6_iZVm8ESkOhzeP7ioOIyRxz6-TZDFwK29UM_SP3n22kg1SrYdO_zNoElrgls-7CTbxZLTASa1f6HySjRY58cPeBsWtSKZ42WoWhAb38ig_JE-ILjqmUDi6EunOOIAWI7u4uNlxGSeIY_fY3PidssoL-DO2EffdhQ7YDNfOJcZbrMNqGDhIh9g");'>
+</div>
+</div>
+</div>
+</section>
+<!-- Spacer -->
+<div class="h-10"></div>
+<!-- Section: Más Pedidos (Bestsellers) -->
+<section class="bg-white dark:bg-[#1e170e] py-8 rounded-t-3xl shadow-[0_-4px_20px_rgba(0,0,0,0.03)] border-t border-black/5 dark:border-white/5" id="menu">
+<div class="flex items-center justify-between px-5 pb-6">
+<div>
+<h3 class="text-text-main dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Favoritos de la casa</h3>
+<p class="text-text-main/50 dark:text-white/50 text-sm mt-1">Lo que todos aman</p>
+</div>
+<button class="flex items-center justify-center size-10 rounded-full bg-background-light dark:bg-white/10 text-primary">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Products Grid -->
+<div class="grid grid-cols-2 gap-4 px-5">
+<!-- Card 1 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Golden flaky almond croissant dusted with powdered sugar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCLTYkQtwwMN9ytLpPknalygyP-7LB3RBJc34TpyQgHdefps98L2n6DLgM2qkZqpD9QVY9VmFI2oNGzqRiB_oDUmYnRTsoXaFqBK6hIftrzgfmxBc_1q9qCv46k8B0q0YQ8B294f5h3u9uV2R83QJAau7iGA3tRgL78pq2I82Jy4ubdFtELOfbxUleo5LS42qI5m3bkFu3iOvPZc4wPiRgNF4cXDe7jHa2vc8gxV93nkIhse-lXtHDtTMBYwoH4ypJ_cBZR2dIzLg");'>
+</div>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2 py-1 rounded-md text-xs font-bold text-text-main dark:text-white shadow-sm">
+                                $55
+                            </div>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="text-text-main dark:text-white font-bold text-sm leading-tight group-hover:text-primary transition-colors">Croissant Almendra</h4>
+<p class="text-text-main/60 dark:text-white/60 text-xs line-clamp-1">Relleno de crema de almendras.</p>
+<button class="mt-1 text-xs font-bold text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity -ml-1">
+<span class="material-symbols-outlined text-[16px]">add_circle</span> Agregar
+                            </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Iced vanilla latte in a tall glass with milk swirl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfYbN7weFX8JUnUpRv_ZMBdGHoP1lDCH1GcbXTrnLPJhZfT-g5Us6_-qcYL3lzxEhHHs_7gk1EfW2wDJbfP07uXTx_VzIfy1zIjZjxqRnagSFSKf3hnGv3ubJ7cQV20xk-e15Euf9RD1Z3wnc32m6Jy6WiErPdpwQfPok5OyBa7thhFh-mSj5ykzDNV2RyfA86eZm6xBsyJq7m3kjMiD5vn07E-jCP24XQ7x2Zl4CfzsGf6u6rPmAbZ6vGOUU542ZMQ-BPAwlv3w");'>
+</div>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2 py-1 rounded-md text-xs font-bold text-text-main dark:text-white shadow-sm">
+                                $65
+                            </div>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="text-text-main dark:text-white font-bold text-sm leading-tight group-hover:text-primary transition-colors">Latte Vainilla</h4>
+<p class="text-text-main/60 dark:text-white/60 text-xs line-clamp-1">Espresso doble con leche.</p>
+<button class="mt-1 text-xs font-bold text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity -ml-1">
+<span class="material-symbols-outlined text-[16px]">add_circle</span> Agregar
+                            </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Avocado toast with poached egg on sourdough bread" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_o3oj9pH50XJ0xaV0DAaNTbUkexPIc5z8L8CID8HNpelD9-CoXzEz7gMd2tfzTTEn-kNTY8tQiK22L7ZEuo7XgH4U73Bs4U9CJycaHRN8-suD4Ag19V5pbFGhbi-j9L_DoBGs3w_MlMPdVuzebLm1wb3x3vnflTOpXLWG0Ib8GuLg8izuuACvJukBQGOTXjDCfJ49HzjndfAWJsQvQ_F7fM9ZE-gIsuDHc-bb5NLp2y-34i-FPDq2h7rkvX1Mnrohu9LfoaTRKg");'>
+</div>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2 py-1 rounded-md text-xs font-bold text-text-main dark:text-white shadow-sm">
+                                $110
+                            </div>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="text-text-main dark:text-white font-bold text-sm leading-tight group-hover:text-primary transition-colors">Avocado Toast</h4>
+<p class="text-text-main/60 dark:text-white/60 text-xs line-clamp-1">Pan de masa madre.</p>
+<button class="mt-1 text-xs font-bold text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity -ml-1">
+<span class="material-symbols-outlined text-[16px]">add_circle</span> Agregar
+                            </button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Slice of cheesecake topped with red berries" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0KJAEQvVCg65dulEJe4p_XyWnhgzcZol5HC9JaTCurW4UXEWiCISfy9C40rAWjRLGEnRi_bGAJN6qjpaCB13kxZOdk4xfko9bRz15B-6mKLvYyeHm8WD6ot9idbOJQ-jwfuhqn9LPiFbo8IZWdW9178hTMirvRDRlG92K3ZJVHJgyCR6jEGZSEIZ2DZ6y0DnIZ9pL3JRRQflEycpa1r1Zy8pllBTfzC35MX0tlLi3Ja67JU3W_8HIgdpLFwAu4B384pIE3r6gCA");'>
+</div>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2 py-1 rounded-md text-xs font-bold text-text-main dark:text-white shadow-sm">
+                                $85
+                            </div>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="text-text-main dark:text-white font-bold text-sm leading-tight group-hover:text-primary transition-colors">Cheesecake Berries</h4>
+<p class="text-text-main/60 dark:text-white/60 text-xs line-clamp-1">Suave y cremoso.</p>
+<button class="mt-1 text-xs font-bold text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity -ml-1">
+<span class="material-symbols-outlined text-[16px]">add_circle</span> Agregar
+                            </button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Rustic sourdough bread loaf on wooden board" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAX7qaSsxKXFL9kA54OUpBGgM_iPq1aEEUGs8oVzkkbnrJy1Cifzgo6E3lX8f-job9-0rC5lV10DK3HcCPTtf2ZSbJhoIUD57Q45eond4b6NLKfiyXPlINMe4x-qQlWt1yz1QMwFv6JsRThDFj2zgcsiu0sAzTKCreong-hQHoTXtFhX-Us2iFdDnRabjiSls_26_jDK3w6ulLBvffwdW12el5CJIfFuni7dzY8NAYxePywhUdwU_IovLtz_dg15a0Crryfc2aHcg");'>
+</div>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2 py-1 rounded-md text-xs font-bold text-text-main dark:text-white shadow-sm">
+                                $90
+                            </div>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="text-text-main dark:text-white font-bold text-sm leading-tight group-hover:text-primary transition-colors">Pan Masa Madre</h4>
+<p class="text-text-main/60 dark:text-white/60 text-xs line-clamp-1">Hogaza rústica 1kg.</p>
+<button class="mt-1 text-xs font-bold text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity -ml-1">
+<span class="material-symbols-outlined text-[16px]">add_circle</span> Agregar
+                            </button>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="flex flex-col gap-3 group cursor-pointer">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="Classic cappuccino with foam art in white cup" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBuzEhe1SgD0ZmQfgVAKrCCSeOTPlSl6x7L3nQj7FM0t8vNDolyC5QevZHgGSit_lpoJvCZqYuMz-pOeGoj2AT4PObxA9KzXBq7ATuaL4U1T5P0U_QEk6vgpBiL_xU-0uGz56fOLrcyzF8jhjcMfBj9EtWOp3LULHeM9V_-aEadY2Pv_PGRYVXh0NTuhlV2alSFcAjzQAc1hfgH-jL0LLBNcbj08IcNc_sjOKdzmQ7qP3WZrQgmdC0iYSUFRTnNp4zwMpRvgVXDtw");'>
+</div>
+<div class="absolute top-2 right-2 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2 py-1 rounded-md text-xs font-bold text-text-main dark:text-white shadow-sm">
+                                $60
+                            </div>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="text-text-main dark:text-white font-bold text-sm leading-tight group-hover:text-primary transition-colors">Capuchino</h4>
+<p class="text-text-main/60 dark:text-white/60 text-xs line-clamp-1">Clásico italiano.</p>
+<button class="mt-1 text-xs font-bold text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity -ml-1">
+<span class="material-symbols-outlined text-[16px]">add_circle</span> Agregar
+                            </button>
+</div>
+</div>
+</div>
+<div class="px-5 mt-6">
+<button class="w-full h-12 rounded-lg border border-primary/20 text-primary font-bold hover:bg-primary/5 transition-colors flex items-center justify-center gap-2">
+                        Ver todo el menú
+                    </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-background-light dark:bg-background-dark py-10 px-6 border-t border-black/5 dark:border-white/5 mt-auto">
+<div class="flex flex-col gap-6 text-center">
+<h2 class="text-text-main dark:text-white text-lg font-bold">Habito</h2>
+<div class="flex flex-col gap-2">
+<p class="text-text-main/60 dark:text-white/60 text-sm">Av. Reforma 123, Juárez</p>
+<p class="text-text-main/60 dark:text-white/60 text-sm">Lun - Dom: 7am - 9pm</p>
+</div>
+<div class="flex justify-center gap-6 mt-2">
+<a class="text-text-main/40 dark:text-white/40 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Instagram</span>
+<svg class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="text-text-main/40 dark:text-white/40 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Facebook</span>
+<svg class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+</div>
+<p class="text-text-main/30 dark:text-white/30 text-xs">© 2024 Habito Café. All rights reserved.</p>
+</div>
+</footer>
+</main>
+<!-- Bottom safe area spacer for mobile -->
+<div class="h-6 bg-background-light dark:bg-background-dark w-full"></div>
+</div>
+</body></html>
