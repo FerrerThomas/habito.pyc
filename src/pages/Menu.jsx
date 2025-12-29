@@ -28,7 +28,7 @@ export default function Menu() {
 
     return (
         <div className="pb-20"> {/* pb-20 for bottom nav space */}
-            {/* Search Bar Section */}
+            {/* Search Bar Section 
             <div className="px-4 py-4 pt-6">
                 <div className="relative group">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -42,10 +42,10 @@ export default function Menu() {
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
                 </div>
-            </div>
+            </div>*/}
 
             {/* Category Filters */}
-            <div className="w-full overflow-x-auto no-scrollbar pb-2 pl-4">
+            <div className="w-full overflow-x-auto no-scrollbar pb-2 pl-4 px-4 py-4 pt-6">
                 <div className="flex space-x-3 min-w-max pr-4">
                     <button
                         onClick={() => setActiveCategory("Todo")}

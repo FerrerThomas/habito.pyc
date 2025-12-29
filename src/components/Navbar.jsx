@@ -25,8 +25,8 @@ export default function Navbar() {
                         </span>
                     </button>
 
-                    {/* Logo - ALWAYS Center */}
-                    <Link to="/" className="text-xl font-bold tracking-tight text-text-main dark:text-white lg:text-center absolute left-1/2 transform -translate-x-1/2">
+                    {/* Logo - Center (Mobile) / Left (Desktop) */}
+                    <Link to="/" className="text-xl font-bold tracking-tight text-text-main dark:text-white absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 lg:flex-1 lg:text-left lg:ml-4">
                         Habito
                     </Link>
 

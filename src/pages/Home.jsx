@@ -161,17 +161,17 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-text-main dark:text-white font-display">Contáctanos</h3>
 
                     <div className="flex flex-wrap justify-center gap-4">
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-white/5 border border-border-subtle dark:border-white/10 text-text-main dark:text-white hover:border-primary hover:text-primary transition-all shadow-sm">
+                        <a href="https://instagram.com/habito.pyc" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-white/5 border border-border-subtle dark:border-white/10 text-text-main dark:text-white hover:border-primary hover:text-primary transition-all shadow-sm">
                             <span className="font-bold">Instagram</span>
                         </a>
-                        <a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-white/5 border border-border-subtle dark:border-white/10 text-text-main dark:text-white hover:border-[#25D366] hover:text-[#25D366] transition-all shadow-sm">
+                        <a href="https://wa.me/5492355506234" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-white/5 border border-border-subtle dark:border-white/10 text-text-main dark:text-white hover:border-[#25D366] hover:text-[#25D366] transition-all shadow-sm">
                             <span className="font-bold">WhatsApp</span>
                         </a>
                     </div>
 
                     <div className="flex flex-col gap-1 text-text-main/80 dark:text-white/80">
-                        <p className="font-medium">Calle Falsa 123, Ciudad</p>
-                        <p>Buenos Aires, Argentina</p>
+                        <p className="font-medium">Calle 7 987 (entre 48 y 49)</p>
+                        <p>La Plata, Buenos Aires</p>
                     </div>
 
                     {/* Google Map */}

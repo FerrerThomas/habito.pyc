@@ -26,6 +26,7 @@ export default function ProductDetail() {
     // For demo purposes, we are using 4 generic images plus the product image if we wanted, 
     // but the user requested "the same 4 generic images for all". 
     const images = [
+        product.image,
         "https://lh3.googleusercontent.com/aida-public/AB6AXuBfUmx4fLBj6NkvXtaWQ2kq_hzRJgaBK3QFPXEkuvjt8ODaU-hwASGnNyt_-RbwcYvosXBGij4vPKzMh2goRaT7ItQEPHK5s5r0ry7MUzqZoycdW2q9PRp-BKsNRIdnml4kbb4V20q9eD5yiyDXxdOaekCZoOFRum_mWlJcaY-BPItuMJl1xtmqYBZ3uygpwEbGIsUxo4hRYU5T__U8NoQTmEFek_rVaTsuayEeXbcNCnCBlDegu7roN6cNKApZv33b9ADYo89sNmg",
         "https://lh3.googleusercontent.com/aida-public/AB6AXuDqUYc5X9RNW4IysaBV2zK5jGMyd71COBZUR1HFqx0lq-6nVseLSDEoiWxGc8Wz2W2VfmdLNNxABrbM0GYFhNloPk0-nvL0iSCTHiUrEjV65NQnxFPtgGlE8cZpJJFTJP5kUWH7CjLBUK0MIkj6rrLOQIro4PMHTCkwo07Pvjo3wxi0LLjYmbVhpstCANw-rm5s7cD-GW5PPMnGr9ZD1goxWUWqqGwqu3Y55bkyy3hw-4mwbe7TwBHcg9yHSdMJ_8nzO-Ble7PKlw",
         "https://lh3.googleusercontent.com/aida-public/AB6AXuBhQwIO6AB11-16vxq6qM4PxKHgb7rHwoyE6hpKNCjVYaPi_jFLV-I3qS5T-sqC0YCwYJPxZFu9kkjKB4ucS3TT3owD7IwlZfOgRZwTM1bkhMEUhDoB-Lt23y8kCwh0wI6WGZgDRzwfL7ism-OJnac9obPJ6CsKqxR6ijAe_f5tOi-T70Uplf7AYcQdzT6eeUxshlR-ZU9UaV1pAWrtOJOshVVMah4jiQYVx_uB3jM-NBc0r499oDQLHyfyQV6Xyo6399Gzj08yvg",

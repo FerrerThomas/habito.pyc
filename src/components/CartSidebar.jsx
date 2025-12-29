@@ -25,7 +25,7 @@ export default function CartSidebar() {
     }, [isCartOpen, toggleCart]);
 
     const handleWhatsAppOrder = () => {
-        const phoneNumber = "5491112345678"; // Replace with real number
+        const phoneNumber = "5492355506234"; // Replace with real number
         let message = "Hola Habito! Quiero realizar el siguiente pedido:\n\n";
 
         cart.forEach(item => {
