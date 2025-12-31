@@ -92,9 +92,9 @@ export default function ProductDetail() {
 
                                 {/* Title & Price */}
                                 <div className="flex flex-col gap-1 mb-4">
-                                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white" id="modal-title">{product.name}</h2>
+                                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white font-playfair" id="modal-title">{product.name}</h2>
                                     <div className="flex items-center justify-between md:justify-start md:gap-4">
-                                        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">{product.category}</span>
+                                        <span className="text-sm font-medium text-gray-500 dark:text-gray-400 font-playfair">{product.category}</span>
                                         <div className="px-3 py-1 rounded-full bg-primary/10 dark:bg-primary/20 text-primary font-bold text-lg">
                                             ${product.price}
                                         </div>
@@ -103,7 +103,7 @@ export default function ProductDetail() {
 
                                 {/* Description */}
                                 <div className="space-y-4">
-                                    <p className="text-[15px] md:text-base leading-relaxed text-gray-600 dark:text-gray-300">
+                                    <p className="text-[15px] md:text-base leading-relaxed text-gray-600 dark:text-gray-300 font-playfair italic">
                                         {product.description}
                                     </p>
 
@@ -131,7 +131,7 @@ export default function ProductDetail() {
                                 <span className="w-8 text-center font-bold text-lg text-gray-900 dark:text-white">{quantity}</span>
                                 <button onClick={incrementQuantity} className="w-10 h-full flex items-center justify-center text-gray-500 hover:text-primary transition-colors text-xl font-bold">+</button>
                             </div>
-                            <button onClick={handleAddToCart} className="flex-1 flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 active:bg-primary/90 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-primary/20 transition-all duration-200 transform active:scale-[0.98]">
+                            <button onClick={handleAddToCart} className="flex-1 flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 active:bg-primary/90 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-primary/20 transition-all duration-200 transform active:scale-[0.98] ">
                                 <span className="material-symbols-outlined text-[20px]">add_shopping_cart</span>
                                 Agregar
                             </button>

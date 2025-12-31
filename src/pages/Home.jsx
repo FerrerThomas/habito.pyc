@@ -61,17 +61,17 @@ export default function Home() {
                     <div className="flex min-h-[520px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4 relative overflow-hidden"
                         style={{ backgroundImage: 'linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.1) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDYLqQFAZ9hBbbFnlrcZwlH5KgrfqjlHl3ebq7LN9JiP-3ZO2tfJczhfFiRccYXn1UV2qyTVqY8pAsU9SrmoR_Mph5iJBVnQALy1m-5k5wKK6Wtego3-tgbY7kCLbmsFdfhG8mOyTndLBMS4FaHCViH3VD7CtQqjwNSGz-9yX8RC4gK9Nlg1PfZs4n_JV8LE-8kCxdcWpNktsoAeVaFW3RV30GuuH_n8JFooSqf0oSBmIt44pu04CJsSpym2P7z5bMsKndEbqaRqg")' }}>
                         <div className="flex flex-col gap-3 text-center z-10 max-w-[320px]">
-                            <h1 className="text-white text-5xl font-black leading-tight tracking-[-0.033em] drop-shadow-sm animate-fade-up">
+                            <h1 className="text-white text-5xl font-medium leading-tight tracking-[-0.033em] drop-shadow-sm animate-fade-up font-playfair">
                                 Habito
                             </h1>
-                            <h1 className="text-white text-3xl font-black leading-tight tracking-[-0.033em] drop-shadow-sm animate-fade-up">
-                                Panadería & Café
+                            <h1 className="text-white text-3xl font-normal leading-tight tracking-[-0.033em] drop-shadow-sm animate-fade-up font-playfair">
+                                PANADERÍA & CAFÉ
                             </h1>
-                            <h2 className="text-white/90 text-sm font-medium leading-relaxed animate-fade-up delay-100 opacity-0" style={{ animationFillMode: 'forwards' }}>
+                            <h2 className="text-white/90 text-sm font-normal leading-relaxed animate-fade-up delay-100 opacity-0 font-playfair italic" style={{ animationFillMode: 'forwards' }}>
                                 El arte del buen café y el pan recién horneado en un ambiente único.
                             </h2>
                         </div>
-                        <Link to="/menu" className="z-10 flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary hover:bg-primary/90 transition-all text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20 transform active:scale-95 animate-fade-up delay-200 opacity-0" style={{ animationFillMode: 'forwards' }}>
+                        <Link to="/menu" className="z-10 flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary hover:bg-primary/90 transition-all text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20 transform active:scale-95 animate-fade-up delay-200 opacity-0 font-playfair" style={{ animationFillMode: 'forwards' }}>
                             <span className="truncate">Ver menú</span>
                         </Link>
                     </div>
@@ -83,11 +83,11 @@ export default function Home() {
 
             {/* Section: El Lugar (The Place) */}
             <section id="place">
-                <div className="flex items-center justify-between px-4 pb-2 pt-4">
-                    <h3 className="text-text-main dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Nuestro Espacio</h3>
+                <div className="flex items-center justify-between px-4 pb-2 pt-4 ">
+                    <h3 className="text-text-main dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] font-playfair">Nuestro Espacio</h3>
                     <a href="#" className="text-xs font-bold text-primary tracking-wide uppercase">Galería</a>
                 </div>
-                <p className="text-text-main/70 dark:text-white/70 text-base font-normal leading-relaxed pb-6 pt-1 px-4">
+                <p className="text-text-main/70 dark:text-white/70 text-base font-normal leading-relaxed pb-6 pt-1 px-4 font-playfair italic">
                     Un rincón acogedor para tus mañanas, diseñado para disfrutar del aroma del café y la calidez del pan recién hecho.
                 </p>
 
@@ -118,8 +118,8 @@ export default function Home() {
             <section className="bg-white dark:bg-[#1e170e] py-8 rounded-t-3xl shadow-[0_-4px_20px_rgba(0,0,0,0.03)] border-t border-black/5 dark:border-white/5" id="menu">
                 <div className="flex items-center justify-between px-5 pb-6">
                     <div>
-                        <h3 className="text-text-main dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] animate-fade-up">Favoritos de la casa</h3>
-                        <p className="text-text-main/50 dark:text-white/50 text-sm mt-1 animate-fade-up delay-100 opacity-0" style={{ animationFillMode: 'forwards' }}>Lo que todos aman</p>
+                        <h3 className="text-text-main dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] animate-fade-up font-playfair">Favoritos de la casa</h3>
+                        <p className="text-text-main/50 dark:text-white/50 text-sm mt-1 animate-fade-up delay-100 opacity-0 font-playfair italic" style={{ animationFillMode: 'forwards' }}>Lo que todos aman</p>
                     </div>
                     <Link to="/menu" className="flex items-center justify-center size-10 rounded-full bg-background-light dark:bg-white/10 text-primary">
                         <span className="material-symbols-outlined">arrow_forward</span>
@@ -139,8 +139,8 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className="flex flex-col gap-1">
-                                <h4 className="text-text-main dark:text-white font-bold text-sm leading-tight group-hover:text-primary transition-colors">{p.name}</h4>
-                                <p className="text-text-main/60 dark:text-white/60 text-xs line-clamp-1">{p.desc}</p>
+                                <h4 className="text-text-main dark:text-white font-bold text-sm leading-tight group-hover:text-primary transition-colors font-playfair">{p.name}</h4>
+                                <p className="text-text-main/60 dark:text-white/60 text-xs line-clamp-1 font-playfair italic">{p.desc}</p>
 
                             </div>
                         </Link>
@@ -148,7 +148,7 @@ export default function Home() {
                 </div>
 
                 <div className="px-5 mt-6">
-                    <Link to="/menu" className="w-full h-12 rounded-lg border border-primary/20 text-primary font-bold hover:bg-primary/5 transition-colors flex items-center justify-center gap-2">
+                    <Link to="/menu" className="font-playfair w-full h-12 rounded-lg border border-primary/20 text-primary font-bold hover:bg-primary/5 transition-colors flex items-center justify-center gap-2">
                         Ver todo el menú
                     </Link>
                 </div>

@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <footer className="bg-background-light dark:bg-background-dark py-10 px-6 border-t border-black/5 dark:border-white/5 mt-auto">
             <div className="flex flex-col gap-6 text-center">
-                <h2 className="text-text-main dark:text-white text-lg font-bold">Habito</h2>
+                <h2 className="text-text-main dark:text-white text-lg font-playfair">Habito</h2>
                 <div className="flex flex-col gap-2">
                     <p className="text-text-main/60 dark:text-white/60 text-sm">Calle 7 987 (entre 48 y 49)</p>
                     <p className="text-text-main/60 dark:text-white/60 text-sm">Lunes a Viernes: 8am a 7pm</p>

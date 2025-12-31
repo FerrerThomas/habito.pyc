@@ -26,12 +26,12 @@ export default function Navbar() {
                     </button>
 
                     {/* Logo - Center (Mobile) / Left (Desktop) */}
-                    <Link to="/" className="text-xl font-bold tracking-tight text-text-main dark:text-white absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 lg:flex-1 lg:text-left lg:ml-4">
+                    <Link to="/" className="text-xl font-bold tracking-tight text-text-main dark:text-white absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 lg:flex-1 lg:text-left lg:ml-4 font-playfair">
                         Habito
                     </Link>
 
                     {/* Desktop Links - Center */}
-                    <div className="hidden lg:flex gap-6 text-sm font-medium text-text-main dark:text-gray-300">
+                    <div className="hidden lg:flex gap-6 text-sm font-medium text-text-main dark:text-gray-300 font-playfair">
                         <Link to="/" className="hover:text-primary transition-colors">Inicio</Link>
                         <Link to="/menu" className="hover:text-primary transition-colors">Menú</Link>
                         <a href="/#place" className="hover:text-primary transition-colors">El lugar</a>
@@ -76,7 +76,7 @@ export default function Navbar() {
                         className={`group relative text-5xl font-display font-bold text-text-main dark:text-white transition-all duration-500 ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
                         style={{ transitionDelay: '100ms' }}
                     >
-                        <span className="relative z-10 group-hover:text-primary transition-colors">Inicio</span>
+                        <span className="relative z-10 group-hover:text-primary transition-colors font-playfair">Inicio</span>
                         <span className="absolute -bottom-2 left-1/2 w-0 h-1 bg-primary rounded-full -translate-x-1/2 group-hover:w-1/2 transition-all duration-300 ease-out"></span>
                     </Link>
                     <Link
@@ -85,7 +85,7 @@ export default function Navbar() {
                         className={`group relative text-5xl font-display font-bold text-text-main dark:text-white transition-all duration-500 ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
                         style={{ transitionDelay: '200ms' }}
                     >
-                        <span className="relative z-10 group-hover:text-primary transition-colors">Menú</span>
+                        <span className="relative z-10 group-hover:text-primary transition-colors font-playfair">Menú</span>
                         <span className="absolute -bottom-2 left-1/2 w-0 h-1 bg-primary rounded-full -translate-x-1/2 group-hover:w-1/2 transition-all duration-300 ease-out"></span>
                     </Link>
                     <a
@@ -94,7 +94,7 @@ export default function Navbar() {
                         className={`group relative text-5xl font-display font-bold text-text-main dark:text-white transition-all duration-500 ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
                         style={{ transitionDelay: '300ms' }}
                     >
-                        <span className="relative z-10 group-hover:text-primary transition-colors">El lugar</span>
+                        <span className="relative z-10 group-hover:text-primary transition-colors font-playfair">El lugar</span>
                         <span className="absolute -bottom-2 left-1/2 w-0 h-1 bg-primary rounded-full -translate-x-1/2 group-hover:w-1/2 transition-all duration-300 ease-out"></span>
                     </a>
                     <a
@@ -103,7 +103,7 @@ export default function Navbar() {
                         className={`group relative text-5xl font-display font-bold text-text-main dark:text-white transition-all duration-500 ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
                         style={{ transitionDelay: '400ms' }}
                     >
-                        <span className="relative z-10 group-hover:text-primary transition-colors">Contacto</span>
+                        <span className="relative z-10 group-hover:text-primary transition-colors font-playfair">Contacto</span>
                         <span className="absolute -bottom-2 left-1/2 w-0 h-1 bg-primary rounded-full -translate-x-1/2 group-hover:w-1/2 transition-all duration-300 ease-out"></span>
                     </a>
                 </div>

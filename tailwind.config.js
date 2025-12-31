@@ -19,7 +19,8 @@ export default {
         "border-subtle": "#e6e0d9",
       },
       fontFamily: {
-        "display": ["Plus Jakarta Sans", "sans-serif"]
+        "display": ["Plus Jakarta Sans", "sans-serif"],
+        "playfair": ["Playfair Display", "serif"]
       },
     },
   },
