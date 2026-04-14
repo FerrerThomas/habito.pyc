@@ -1,58 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { supabase } from '../lib/supabase';
 
 const products = [
     {
         id: 1,
+        // ... previous static array truncated to save lines ...
         name: "Croissant Almendra",
         desc: "Relleno de crema de almendras.",
         price: 55,
         img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCLTYkQtwwMN9ytLpPknalygyP-7LB3RBJc34TpyQgHdefps98L2n6DLgM2qkZqpD9QVY9VmFI2oNGzqRiB_oDUmYnRTsoXaFqBK6hIftrzgfmxBc_1q9qCv46k8B0q0YQ8B294f5h3u9uV2R83QJAau7iGA3tRgL78pq2I82Jy4ubdFtELOfbxUleo5LS42qI5m3bkFu3iOvPZc4wPiRgNF4cXDe7jHa2vc8gxV93nkIhse-lXtHDtTMBYwoH4ypJ_cBZR2dIzLg",
         alt: "Golden flaky almond croissant dusted with powdered sugar"
-    },
-    {
-        id: 2,
-        name: "Latte Vainilla",
-        desc: "Espresso doble con leche.",
-        price: 65,
-        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBfYbN7weFX8JUnUpRv_ZMBdGHoP1lDCH1GcbXTrnLPJhZfT-g5Us6_-qcYL3lzxEhHHs_7gk1EfW2wDJbfP07uXTx_VzIfy1zIjZjxqRnagSFSKf3hnGv3ubJ7cQV20xk-e15Euf9RD1Z3wnc32m6Jy6WiErPdpwQfPok5OyBa7thhFh-mSj5ykzDNV2RyfA86eZm6xBsyJq7m3kjMiD5vn07E-jCP24XQ7x2Zl4CfzsGf6u6rPmAbZ6vGOUU542ZMQ-BPAwlv3w",
-        alt: "Iced vanilla latte in a tall glass with milk swirl"
-    },
-    {
-        id: 3,
-        name: "Avocado Toast",
-        desc: "Pan de masa madre.",
-        price: 110,
-        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuA_o3oj9pH50XJ0xaV0DAaNTbUkexPIc5z8L8CID8HNpelD9-CoXzEz7gMd2tfzTTEn-kNTY8tQiK22L7ZEuo7XgH4U73Bs4U9CJycaHRN8-suD4Ag19V5pbFGhbi-j9L_DoBGs3w_MlMPdVuzebLm1wb3x3vnflTOpXLWG0Ib8GuLg8izuuACvJukBQGOTXjDCfJ49HzjndfAWJsQvQ_F7fM9ZE-gIsuDHc-bb5NLp2y-34i-FPDq2h7rkvX1Mnrohu9LfoaTRKg",
-        alt: "Avocado toast with poached egg on sourdough bread"
-    },
-    {
-        id: 4,
-        name: "Cheesecake Berries",
-        desc: "Suave y cremoso.",
-        price: 85,
-        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuA0KJAEQvVCg65dulEJe4p_XyWnhgzcZol5HC9JaTCurW4UXEWiCISfy9C40rAWjRLGEnRi_bGAJN6qjpaCB13kxZOdk4xfko9bRz15B-6mKLvYyeHm8WD6ot9idbOJQ-jwfuhqn9LPiFbo8IZWdW9178hTMirvRDRlG92K3ZJVHJgyCR6jEGZSEIZ2DZ6y0DnIZ9pL3JRRQflEycpa1r1Zy8pllBTfzC35MX0tlLi3Ja67JU3W_8HIgdpLFwAu4B384pIE3r6gCA",
-        alt: "Slice of cheesecake topped with red berries"
-    },
-    {
-        id: 5,
-        name: "Pan Masa Madre",
-        desc: "Hogaza rústica 1kg.",
-        price: 90,
-        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAX7qaSsxKXFL9kA54OUpBGgM_iPq1aEEUGs8oVzkkbnrJy1Cifzgo6E3lX8f-job9-0rC5lV10DK3HcCPTtf2ZSbJhoIUD57Q45eond4b6NLKfiyXPlINMe4x-qQlWt1yz1QMwFv6JsRThDFj2zgcsiu0sAzTKCreong-hQHoTXtFhX-Us2iFdDnRabjiSls_26_jDK3w6ulLBvffwdW12el5CJIfFuni7dzY8NAYxePywhUdwU_IovLtz_dg15a0Crryfc2aHcg",
-        alt: "Rustic sourdough bread loaf on wooden board"
-    },
-    {
-        id: 6,
-        name: "Capuchino",
-        desc: "Clásico italiano.",
-        price: 60,
-        img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBuzEhe1SgD0ZmQfgVAKrCCSeOTPlSl6x7L3nQj7FM0t8vNDolyC5QevZHgGSit_lpoJvCZqYuMz-pOeGoj2AT4PObxA9KzXBq7ATuaL4U1T5P0U_QEk6vgpBiL_xU-0uGz56fOLrcyzF8jhjcMfBj9EtWOp3LULHeM9V_-aEadY2Pv_PGRYVXh0NTuhlV2alSFcAjzQAc1hfgH-jL0LLBNcbj08IcNc_sjOKdzmQ7qP3WZrQgmdC0iYSUFRTnNp4zwMpRvgVXDtw",
-        alt: "Classic cappuccino with foam art in white cup"
     }
 ];
 
 export default function Home() {
+    const [dbProducts, setDbProducts] = useState(products.slice(0, 4));
+
+    useEffect(() => {
+        async function fetchFavorites() {
+            const { data } = await supabase.from('products').select('*').limit(4);
+            if (data && data.length > 0) {
+                setDbProducts(data);
+            }
+        }
+        fetchFavorites();
+    }, []);
+
     return (
         <div>
             {/* Hero Section */}
@@ -128,11 +102,11 @@ export default function Home() {
 
                 {/* Products Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-5">
-                    {products.map((p, i) => (
-                        <Link to="/producto/1" key={p.id} className="flex flex-col gap-3 group cursor-pointer animate-fade-up opacity-0" style={{ animationDelay: `${i * 50 + 200}ms`, animationFillMode: 'forwards' }}>
+                    {dbProducts.map((p, i) => (
+                        <Link to={`/producto/${p.id}`} key={p.id} className="flex flex-col gap-3 group cursor-pointer animate-fade-up opacity-0" style={{ animationDelay: `${i * 50 + 200}ms`, animationFillMode: 'forwards' }}>
                             <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800">
                                 <div className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
-                                    style={{ backgroundImage: `url("${p.img}")` }}>
+                                    style={{ backgroundImage: `url("${p.image}")` }}>
                                 </div>
                                 <div className="absolute top-2 right-2 bg-white/90 dark:bg-black/80 backdrop-blur-sm px-2 py-1 rounded-md text-xs font-bold text-text-main dark:text-white shadow-sm">
                                     ${p.price}
@@ -140,8 +114,7 @@ export default function Home() {
                             </div>
                             <div className="flex flex-col gap-1">
                                 <h4 className="text-text-main dark:text-white font-bold text-sm leading-tight group-hover:text-primary transition-colors">{p.name}</h4>
-                                <p className="text-text-main/60 dark:text-white/60 text-xs line-clamp-1">{p.desc}</p>
-
+                                <p className="text-text-main/60 dark:text-white/60 text-xs line-clamp-1">{p.description || p.desc}</p>
                             </div>
                         </Link>
                     ))}

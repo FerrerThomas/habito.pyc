@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { categories, products } from '../data/products';
+import { supabase } from '../lib/supabase';
 
 export default function Menu() {
-    const [activeCategory, setActiveCategory] = React.useState("Todo");
-    const [searchTerm, setSearchTerm] = React.useState("");
+    const [activeCategory, setActiveCategory] = useState("Todo");
+    const [searchTerm, setSearchTerm] = useState("");
+    const [categories, setCategories] = useState([]);
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function loadData() {
+            setLoading(true);
+            const { data: catData } = await supabase.from('categories').select('*');
+            const { data: prodData } = await supabase.from('products').select('*');
+            if (catData) setCategories(catData);
+            if (prodData) setProducts(prodData);
+            setLoading(false);
+        }
+        loadData();
+    }, []);
 
     const filteredCategories = categories.map(cat => {
         // Get items for this category from the main products list
@@ -21,10 +36,14 @@ export default function Menu() {
         // Filter items by search term internally
         const matchingItems = cat.items.filter(item =>
             item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            item.description.toLowerCase().includes(searchTerm.toLowerCase())
+            (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()))
         );
         return { ...cat, items: matchingItems };
     }).filter(cat => cat.items.length > 0);
+
+    if (loading) {
+        return <div className="p-10 text-center text-gray-500">Cargando menú...</div>;
+    }
 
     return (
         <div className="pb-20"> {/* pb-20 for bottom nav space */}

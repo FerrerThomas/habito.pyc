@@ -1,17 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { getProductById } from '../data/products';
+import { supabase } from '../lib/supabase';
 import { useCart } from '../context/CartContext';
 
 export default function ProductDetail() {
     const navigate = useNavigate();
     const { id } = useParams();
-    const [selectedImage, setSelectedImage] = React.useState(0);
-    const [quantity, setQuantity] = React.useState(1);
+    const [selectedImage, setSelectedImage] = useState(0);
+    const [quantity, setQuantity] = useState(1);
     const { addToCart, toggleCart } = useCart();
+    
+    const [product, setProduct] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-    // Fetch product
-    const product = getProductById(id);
+    useEffect(() => {
+        async function fetchProduct() {
+            setLoading(true);
+            const { data } = await supabase.from('products').select('*').eq('id', id).single();
+            if (data) setProduct(data);
+            setLoading(false);
+        }
+        fetchProduct();
+    }, [id]);
+
+    if (loading) {
+        return <div className="h-screen flex text-text-main items-center justify-center">Cargando producto...</div>;
+    }
 
     // If product not found
     if (!product) {
