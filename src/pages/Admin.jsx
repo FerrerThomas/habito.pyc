@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
-import { products as localProducts, categories as localCategories } from '../data/products';
+import AdminLogin from './AdminLogin';
+
 import { Link } from 'react-router-dom';
 
 export default function Admin() {
+    const [session, setSession] = useState(undefined); // undefined = loading, null = not logged in
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -28,6 +30,27 @@ export default function Admin() {
     const [catImageFile, setCatImageFile] = useState(null);
     const [prodImageFile, setProdImageFile] = useState(null);
 
+    // Check session on mount and listen for auth changes
+    useEffect(() => {
+        supabase.auth.getSession().then(({ data }) => {
+            setSession(data.session);
+        });
+
+        const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+            setSession(session);
+        });
+
+        return () => subscription.unsubscribe();
+    }, []);
+
+    useEffect(() => {
+        if (session) fetchData();
+    }, [session]);
+
+    const handleLogout = async () => {
+        await supabase.auth.signOut();
+    };
+
     const uploadImage = async (file) => {
         const fileExt = file.name.split('.').pop();
         const fileName = `${Math.random().toString(36).substring(2)}.${fileExt}`;
@@ -46,34 +69,7 @@ export default function Admin() {
         setIsLoading(false);
     };
 
-    useEffect(() => {
-        fetchData();
-    }, []);
 
-    const handleMigrate = async () => {
-        if (!confirm('¿Estás seguro de migrar los datos locales? Esto sobreescribirá si hay IDs duplicados en categorías.')) return;
-        
-        setIsLoading(true);
-        // Migrate categories
-        for (const cat of localCategories) {
-            await supabase.from('categories').upsert({ id: cat.id, title: cat.title, image: cat.image });
-        }
-        
-        // Migrate products
-        for (const prod of localProducts) {
-            await supabase.from('products').insert({
-                name: prod.name,
-                description: prod.description,
-                price: prod.price,
-                category: prod.category,
-                image: prod.image,
-                tags: prod.tags || []
-            });
-        }
-        
-        await fetchData();
-        alert('Migración completada!');
-    };
 
     // --- CATEGORIES ---
     const handleSaveCategory = async (e) => {
@@ -171,6 +167,22 @@ export default function Admin() {
         setProdName(''); setProdDesc(''); setProdPrice(''); setProdCategory(''); setProdTags(''); setProdImage(''); setProdImageFile(null);
     };
 
+    // --- RENDER STATES ---
+    // Still checking auth
+    if (session === undefined) {
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-background-light dark:bg-background-dark">
+                <div className="w-8 h-8 rounded-full border-4 border-primary/30 border-t-primary animate-spin" />
+            </div>
+        );
+    }
+
+    // Not logged in → show login screen
+    if (!session) {
+        return <AdminLogin onLogin={() => {}} />;
+    }
+
+    // Logged in → show admin panel
     return (
         <div className="min-h-screen bg-background-light dark:bg-background-dark text-text-main dark:text-white pb-20 font-display">
             {/* Nav/Header */}
@@ -181,13 +193,11 @@ export default function Admin() {
                         <span className="text-[10px] text-primary uppercase font-bold tracking-wider">Admin Panel</span>
                     </div>
                     <div className="flex items-center gap-3">
-                        <button onClick={handleMigrate} className="text-xs font-bold text-white bg-secondary px-3 py-1.5 rounded-full hover:bg-secondary/90 transition-colors shadow-sm">
-                            Migrar Datos
+                        <span className="text-xs text-text-main/50 dark:text-white/40 hidden sm:block">{session.user.email}</span>
+                        <button onClick={handleLogout} className="text-xs font-bold text-red-500 hover:text-red-600 transition-colors flex items-center gap-1">
+                            <span className="material-symbols-outlined text-[16px]">logout</span>
+                            Salir
                         </button>
-                        <Link to="/" className="text-xs font-bold text-primary hover:text-primary/80 transition-colors flex items-center gap-1">
-                            <span className="material-symbols-outlined text-[16px]">home</span>
-                            Volver
-                        </Link>
                     </div>
                 </div>
             </nav>
@@ -222,7 +232,7 @@ export default function Admin() {
                                 </div>
                                 
                                 <button type="submit" disabled={isUploading} className="mt-2 w-full bg-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-wait text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5">
-                                    {isUploading ? 'Gurdando datos...' : (editingCategory ? 'Guardar Cambios' : 'Agregar Categoría')}
+                                    {isUploading ? 'Guardando...' : (editingCategory ? 'Guardar Cambios' : 'Agregar Categoría')}
                                 </button>
                             </form>
 
@@ -281,7 +291,7 @@ export default function Admin() {
                                 </div>
                                 
                                 <button type="submit" disabled={isUploading} className="mt-2 w-full bg-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-wait text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5">
-                                    {isUploading ? 'Guardando datos...' : (editingProduct ? 'Guardar Cambios' : 'Agregar Producto')}
+                                    {isUploading ? 'Guardando...' : (editingProduct ? 'Guardar Cambios' : 'Agregar Producto')}
                                 </button>
                             </form>
 
